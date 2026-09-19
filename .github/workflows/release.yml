@@ -32,6 +32,7 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: >-
           gh release create "$RELEASE_TAG"
-          --verify-tag --draft --title "$RELEASE_TAG" --generate-notes
+          --verify-tag --draft --title "Notes to Actions $RELEASE_TAG"
+          --notes-file "docs/releases/$RELEASE_TAG.md"
           dist/main.js dist/manifest.json dist/styles.css dist/LICENSE
           dist/obsidian-super-productivity.zip
