@@ -1,0 +1,15 @@
+/* Scope the preview to this settings tab and inherit the active Obsidian theme. */
+.super-productivity-settings .super-productivity-preview {
+  padding: 10px 12px;
+  border-radius: var(--radius-s);
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+  font-family: var(--font-monospace);
+  font-size: var(--font-smallest);
+}
+
+/* Long vault paths should not push the rest of a settings row out of view. */
+.super-productivity-settings .setting-item-control select {
+  max-width: 260px;
+}

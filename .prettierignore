@@ -1,0 +1,9 @@
+node_modules/
+dist/
+main.js
+main.js.map
+.research/
+.test-runtime/
+coverage/
+package-lock.json
+specs.md

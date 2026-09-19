@@ -1,0 +1,37 @@
+name: Prepare draft release
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate release tag
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: npm run release:check -- --tag="$RELEASE_TAG"
+      - run: npm run package
+      - name: Create draft with Obsidian installation assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: >-
+          gh release create "$RELEASE_TAG"
+          --verify-tag --draft --title "$RELEASE_TAG" --generate-notes
+          dist/main.js dist/manifest.json dist/styles.css dist/LICENSE
+          dist/obsidian-super-productivity.zip

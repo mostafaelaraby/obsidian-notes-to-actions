@@ -1,0 +1,31 @@
+{
+  "name": "obsidian-super-productivity",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Send today's Obsidian checkboxes directly to Super Productivity's local REST API.",
+  "author": "Mostafa ELAraby",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node scripts/build.mjs --watch",
+    "build": "tsc --noEmit && node scripts/build.mjs",
+    "test": "npm run build && vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "release:check": "node scripts/check-release.mjs",
+    "check": "npm run format:check && npm run release:check && npm test",
+    "package": "npm run check && node scripts/package.mjs && npm run release:check -- --assets"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "0.28.2",
+    "fflate": "^0.8.2",
+    "moment": "^2.30.1",
+    "obsidian": "1.13.1",
+    "prettier": "^3.9.8",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
