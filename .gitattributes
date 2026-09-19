@@ -1,0 +1,5 @@
+# Keep fresh checkouts consistent with Prettier and .editorconfig on every OS.
+* text=auto eol=lf
+
+# Images must never undergo line-ending conversion.
+*.png binary
