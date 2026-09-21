@@ -10,6 +10,10 @@ Turn today's daily note into today's task list. Write checkboxes in Obsidian, ru
 
 **One Obsidian plugin.** Connect directly to Super Productivity's built-in local REST API. No companion plugin or pairing step is needed.
 
+![Notes to Actions: setup, write tasks, sync, and view results](docs/screenshots/notes-to-actions-demo.gif)
+
+_See how it works in 37 seconds._
+
 ```markdown
 - [ ] Draft the proposal #work
 - [ ] Read the next chapter #reading

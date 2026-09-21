@@ -1,5 +1,7 @@
 # Installation screenshots
 
+[Watch the 37-second walkthrough](notes-to-actions-demo.gif).
+
 Captured on **September 18, 2026** from actual Windows desktop apps:
 
 - **Obsidian 1.7.7**, with the plugin installed from `dist/obsidian-super-productivity.zip` in a disposable vault named **Notes to actions demo**.
